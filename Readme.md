@@ -24,7 +24,6 @@
 | main.py   | 程序入口点      |
 | Scan.py   | 扫描模块核心代码   |
 | config.py | 工具模块代码     |
-| logo.py   | 程序logo     |
+| logo.py   | Kunwu logo |
 | config.py | 程序配置文件     |
-|-----------| ---------- |
 
