@@ -51,6 +51,8 @@ async def upload_file(file_md5, file_text):
                                 print(f"云端扫描结果为：{result}")
                                 if result != "":
                                     break
+                                elif i == 12:
+                                    print("云端响应结果超时")
                             sleep(3)
     except Exception as e:
         print(f"出现错误：{e}")
