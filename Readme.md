@@ -7,7 +7,7 @@
 <img alt="Static Badge" src="https://img.shields.io/badge/License-MIT-green">
 
 <p align="center"> 「<b>KunWu_Cli</b>」Python重构版本</p>
-<p align="center"> 集 <b>模糊规则</b>、<b>污点分析模拟执行</b>、<b>机器学习</b> 三种高效检测策略，精准无误地发现 WebShell 风险</p>
+<p align="center"> 集 <b>模糊规则</b>/<b>污点分析模拟执行</b>/<b>机器学习</b> 三种高效检测策略，精准无误地发现 WebShell 风险</p>
 
 # ✈️ 1# 工具概述
 
@@ -55,3 +55,19 @@ python3 main.py --path /path/to/file
 ![img/img.png](img/img.png)
 ![img/img_1.png](img/img_1.png)
 
+
+# 🙏 4# 感谢各位师傅
+
+## Stargazers
+
+[![Stargazers repo roster for @Re1axCyber/PyKunwu_Cli](http://reporoster.com/stars/Re1axCyber/PyKunwu_Cli)](https://github.com/Re1axCyber/PyKunwu_Cli/stargazers)
+
+
+## Forkers
+
+[![Forkers repo roster for @Re1axCyber/PyKunwu_Cli](http://reporoster.com/forks/Re1axCyber/PyKunwu_Cli)](https://github.com/Re1axCyber/PyKunwu_Cli/network/members)
+
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Re1axCyber/PyKunwu_Cli&type=Date)](https://star-history.com/#Re1axCyber/PyKunwu_Cli&Date)
