@@ -38,6 +38,12 @@
 pip install -r requirements.txt
 ```
 
+如果pip安装速度慢，可以采用国内源进行安装：
+
+```
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
+```
+
 ### 3.2 运行
 
 ```
