@@ -1,9 +1,6 @@
 import aiohttp
 from config import *
-import os
-import base64
-import hashlib
-import json
+import os,base64,hashlib,json
 from time import sleep
 
 
@@ -13,7 +10,7 @@ def calc_md5(content):
         h.update(content.encode())
         return h.hexdigest()
     except Exception as e:
-        print(f"出现错误：{e}")
+        print(f"[-] 出现错误：{e}")
         pass
 
 
@@ -28,34 +25,34 @@ async def upload_file(file_md5, file_text):
 
             async with session.get(url + "/api/v1/anonymous_see_file?apikey=" + apikey + "&md5=" + file_md5, json=data,
                                    headers=headers) as check_resp:
-                print("正在进行历史结果探测")
+                print("[.] 正在进行历史结果探测")
                 resp = await check_resp.text()
                 result = json.loads(resp)["result"]
                 if result != "":
-                    print(f"云端结果已存在,云端扫描结果为：{result}")
+                    print(f"[+] 云端结果已存在,云端扫描结果为：{result}")
                 else:
-                    print("云端结果不存在,开始上传")
+                    print("[.] 云端结果不存在,开始上传")
                     async with session.post(url + "/api/v1/anonymous_up_file?apikey=" + apikey + "&md5=" + file_md5,
                                             json=data, headers=headers) as resp:
                         print(resp.status)
                         print(await resp.json())
-                        print("文件上传成功")
+                        print("[+] 文件上传成功")
                         print()
                         for i in range(0, 10):
-                            print("正在等待云端扫描返回结果")
+                            print("[.] 正在等待云端扫描返回结果")
                             async with session.get(url + "/api/v1/anonymous_see_file?apikey=" + apikey + "&md5=" + file_md5,
                                                    json=data, headers=headers) as upload_resp:
                                 response = await upload_resp.text()
                                 print(json.loads(response))
                                 result = json.loads(response)["result"]
-                                print(f"云端扫描结果为：{result}")
+                                print(f"[+] 云端扫描结果为：{result}")
                                 if result != "":
                                     break
                                 elif i == 12 and result == "" :
-                                    print("云端响应结果超时")
+                                    print("[-] 云端响应结果超时")
                             sleep(3)
     except Exception as e:
-        print(f"出现错误：{e}")
+        print(f"[-] 扫描出现错误：{e}")
         pass
 
 async def list_files(dir_path):
@@ -83,12 +80,10 @@ def file_text(path):
         text = open(path, 'r', encoding='utf-8').read()
         return text
     except Exception as e:
-        print(f"出现错误：{e}")
+        print(f"[-] 文件读取出现错误：{e}")
         pass
 
 
 # get_type(path)
-
-
 # print(os.stat(path).st_size)
 # print(os.path.basename(path))
