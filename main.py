@@ -16,5 +16,7 @@ if __name__ == '__main__':
 
     print(kw_logo)
     print("--------------------------start----------------------------\n")
-    asyncio.run(main())
+    #asyncio.run(main())
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())
     print("--------------------------end----------------------------\n")
